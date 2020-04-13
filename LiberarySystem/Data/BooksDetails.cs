@@ -37,9 +37,10 @@ namespace LiberarySystem.Data
             _db.SaveChanges();
         }
 
-        public Book UpdateBook(Book book)
+        public void UpdateBook(Book book)
         {
-            throw new NotImplementedException();
+            _db.Entry(book).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            _db.SaveChanges();
         }
     }
 }

@@ -12,6 +12,6 @@ namespace LiberarySystem.Data
         public Book GetBook(int id);
         public void CreateBook(Book book);
         public void DeleteBook(int id);
-        public Book UpdateBook(Book book);
+        public void UpdateBook(Book book);
     }
 }

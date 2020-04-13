@@ -47,5 +47,25 @@ namespace LiberarySystem.Controllers
             _books.DeleteBook(id);
             return RedirectToAction(nameof(Index));
         }
+
+        public IActionResult Update(int id)
+        {
+            var book = _books.GetBook(id);
+            return View(book);
+        }
+
+        [HttpPost]
+        public IActionResult Update(Book book)
+        {
+            if (ModelState.IsValid)
+            {
+                _books.UpdateBook(book);
+                return RedirectToAction(nameof(Index));
+            }
+            else
+            {
+                return View();
+            }
+        }
     }
 }

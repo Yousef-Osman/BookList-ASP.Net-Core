@@ -1,0 +1,26 @@
+﻿@model Book
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h3 class="mb-3">Edit a Book</h3>
+<form asp-action="Update" method="post">
+    <div class="form-group row">
+        <label asp-for="Name">Book Name</label>
+        <input type="text" asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Author">Author Name</label>
+        <input type="text" asp-for="Author" class="form-control" />
+        <span asp-validation-for="Author" class="text-danger"></span>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Pages">No. of Pages</label>
+        <input type="number" asp-for="Pages" class="form-control" />
+        <span asp-validation-for="Pages" class="text-danger"></span>
+    </div>
+    <input type="submit" value="Edit book" class="btn btn-warning" />
+</form>
+
+
